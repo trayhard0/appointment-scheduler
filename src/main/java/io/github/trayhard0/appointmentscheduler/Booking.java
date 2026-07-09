@@ -12,6 +12,8 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    private String customerFirstName;
+    private String customerLastName;
     private String customerEmail;
     private String serviceName;
     private LocalDateTime bookingTime;
@@ -22,6 +24,22 @@ public class Booking {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getCustomerFirstName() {
+        return customerFirstName;
+    }
+
+    public void setCustomerFirstName(String customerFirstName) {
+        this.customerFirstName = customerFirstName;
+    }
+
+    public String getCustomerLastName() {
+        return customerLastName;
+    }
+
+    public void setCustomerLastName(String customerLastName) {
+        this.customerLastName = customerLastName;
     }
 
     public String getCustomerEmail() {

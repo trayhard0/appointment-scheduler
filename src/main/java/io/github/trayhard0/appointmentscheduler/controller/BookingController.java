@@ -3,8 +3,6 @@ package io.github.trayhard0.appointmentscheduler.controller;
 import io.github.trayhard0.appointmentscheduler.model.Booking;
 import io.github.trayhard0.appointmentscheduler.service.BookingService;
 import jakarta.validation.Valid;
-import org.springframework.beans.propertyeditors.StringTrimmerEditor;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

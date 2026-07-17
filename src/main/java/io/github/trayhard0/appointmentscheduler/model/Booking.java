@@ -9,6 +9,11 @@ import jakarta.validation.constraints.*;
 
 import java.time.Instant;
 
+/**
+ * @deprecated
+ * use @link Appointment instead.
+ */
+@Deprecated
 @Entity
 public class Booking {
     @Id

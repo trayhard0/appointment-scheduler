@@ -3,20 +3,51 @@ package io.github.trayhard0.appointmentscheduler.dto;
 import java.math.BigDecimal;
 import java.time.Instant;
 
+/**
+ * Data Transfer Object (DTO) representing a detailed appointment response payload sent to the client.
+ * <p>
+ * This DTO acts as a flattened read-only representation of the {@link io.github.trayhard0.appointmentscheduler.model.Appointment}
+ * entity. It aggregates essential information from associated entities (Client, Stylist, and Offering)
+ * to minimize the number of API roundtrips required by client-side UIs.
+ * </p>
+ *
+ * @author trayhard0
+ */
 public class AppointmentResponseDTO {
+
+    /** The unique database identifier for the appointment. */
     private Long id;
+
+    /** The start time of the appointment in UTC. */
     private Instant startTime;
+
+    /** The calculated end time of the appointment in UTC. */
     private Instant endTime;
+
+    /** The current status of the appointment (e.g., "SCHEDULED", "COMPLETED"). */
     private String status;
+
+    /** Optional notes or custom instructions provided during booking. */
     private String notes;
+
+    // Client Details
     private Long clientId;
     private String clientFirstName;
     private String clientLastName;
+
+    // Stylist Details
     private Long stylistId;
     private String stylistFirstName;
     private String stylistLastName;
+
+    // Offering Details
     private Long offeringId;
     private String offeringName;
+
+    /**
+     * The cost of the service at the time of booking.
+     * Stored as a high-precision decimal to ensure accurate billing displays on the UI.
+     */
     private BigDecimal price;
 
     public Long getId() {
